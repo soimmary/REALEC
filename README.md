@@ -8,8 +8,11 @@
 3. В personal_info_wi.py в переменных LOGIN_WI и PASSWORD_WI добавьте логин и пароль от вашего акаунта на Write & Improve.
 4. В write_improve.py добавьте значения в переменные my_wb_path и my_essay_path. Как это сделать, см. ниже:
 
+#### my_wb_path:
 
 ![**my_wb_path:**](https://github.com/soimmary/REALEC/blob/main/my_wb_path.gif)
+
+#### my_essay_path:
 
 ![**my_essay_path:**](https://github.com/soimmary/REALEC/blob/main/my_essay_path.gif)
 
