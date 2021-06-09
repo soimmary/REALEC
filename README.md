@@ -5,4 +5,4 @@
 
 **Контакты:** 
 - rozovayatumbochka@gmail.com
-- telegram: @soimmary
+- telegram: <span style="color:blue"> @soimmary </span>
