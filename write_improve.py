@@ -14,7 +14,7 @@ LOGIN = personal_info.LOGIN
 PASSWORD = personal_info.PASSWORD
 
 
-def get_level(main_path):
+def get_level(folder_path):
     global LOGIN, PASSWORD
     options = Options()
     ua = UserAgent()
@@ -36,10 +36,10 @@ def get_level(main_path):
     my_essay = driver.find_element_by_id('task-60bd05a9-212c-408b-a440-403df000a998').click()
     time.sleep(1)
 
-    for path in tqdm(os.listdir(main_path)):
+    for path in tqdm(os.listdir(folder_path)):
         with open('write_improve_results.csv', 'a') as csvf:
             writer = csv.writer(csvf, delimiter=',')
-            with open(main_path + '/' + path, 'r') as f:
+            with open(folder_path + '/' + path, 'r') as f:
                 text = f.read()
                 try:
                     start_again = driver.find_element_by_xpath('//*[@id="scroller"]/main/div/section[2]'
@@ -48,15 +48,14 @@ def get_level(main_path):
                     insert_text = driver.find_element_by_xpath('//textarea').send_keys(' ')
                     time.sleep(2)
                     check = driver.find_element_by_id('check').click()
-                    time.sleep(15)
+                    time.sleep(10)
                     level = driver.find_element_by_xpath('//*[@id="scroller"]/main/div/div/section[1]'
                                                          '/div/header/div[2]/div/div/p[2]').text
                     writer.writerow([path, level])
-                    # time.sleep(5)
                 except Exception as e:
                     print(e)
                     continue
             csvf.close()
 
 
-get_level('REALEC_texts')
+get_level('/PycharmProjects/REALEC/REALEC_texts')
