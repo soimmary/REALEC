@@ -7,11 +7,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
 
-import personal_info
+import personal_info_wi
 
 
-LOGIN = personal_info.LOGIN
-PASSWORD = personal_info.PASSWORD
+LOGIN = personal_info.LOGIN_WI
+PASSWORD = personal_info.PASSWORD_WI
 
 
 def get_level(folder_path):
