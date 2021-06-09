@@ -1,4 +1,7 @@
 # REALEC
+
+Эти программы помогут вам автоматизировать загрузку файлов на сайты [Grammarly](https://www.grammarly.com), [Write&Improve](https://writeandimprove.com) и [Duolingo](https://cefr.duolingo.com) и получить информацию об уровне английского языка. Результаты с названием файла и уровнем английского записываются в csv файлы.
+
 ## Инструкция
 Перед тем, как начать работу, вам необходимо установить браузеры Chrome и Mozilla и скачать, соответственно, [ChromeDriver](https://chromedriver.chromium.org) и [FirefoxDriver](https://github.com/mozilla/geckodriver/releases). По моим наблюдениям, Grammarly работает только в Firefox'e.
 
