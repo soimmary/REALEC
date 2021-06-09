@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
 
 
-chromedriver_path = '/Users/mariabocharova/PycharmProjects/REALEC/chromedriver'
+chromedriver_path = '/PycharmProjects/REALEC/chromedriver'
 
 
 def get_level(folder_path):
@@ -39,4 +39,4 @@ def get_level(folder_path):
     driver.close()
 
 
-get_level('REALEC_texts')
+get_level('/PycharmProjects/REALEC/REALEC_texts')
