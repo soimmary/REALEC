@@ -3,4 +3,6 @@
 
 **Автор:** Мария Бочарова
 
-Если у вас возникли вопросы или вы хотите дать рекомендацию по улучшению, пишите _rozovayatumbochka@gmail.com_
+**Контакты:** 
+- rozovayatumbochka@gmail.com
+- telegram: @soimmary
