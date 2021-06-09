@@ -4,5 +4,5 @@
 **Автор:** Мария Бочарова
 
 **Контакты:** 
-- 📩 rozovayatumbochka@gmail.com
+- 📨 rozovayatumbochka@gmail.com
 - 📠 telegram: @soimmary
