@@ -37,7 +37,7 @@ def get_level(folder_path):
     time.sleep(5)
     my_wb = driver.find_element_by_xpath(my_wb_path).click()
     time.sleep(2)
-    my_essay = driver.find_element_by_id('task-60bd05a9-212c-408b-a440-403df000a998').click()
+    my_essay = driver.find_element_by_id(my_essay_path).click()
     time.sleep(1)
 
     for path in tqdm(os.listdir(folder_path)):
