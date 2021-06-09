@@ -39,23 +39,27 @@ def get_level(folder_path):
             with open(folder_path + '/' + path, 'r') as f:
                 text = f.read()
                 time.sleep(3)
-                insert_text = driver.find_element_by_xpath("//div[@class='_9c5f1d66-denali-editor-editor ql-editor ql-blank']").send_keys(text)
-                time.sleep(15)
-                score = int(driver.find_element_by_xpath("//div[@class='fhsusol _bec19051-header-performanceScoreFadeIn _48adf116-header-performanceScore']").text)
-                if score in range(0, 6):
-                    level = 'A1'
-                elif score in range(6, 11):
-                    level = 'A2'
-                elif score in range(11, 41):
-                    level = 'B1'
-                elif score in range(41, 51):
-                    level = 'B2'
-                elif score in range(51, 71):
-                    level = 'C1'
-                elif score in range(71, 101):
-                    level = 'C2'
-                start_again = driver.find_element_by_xpath('//div[@class="_9c5f1d66-denali-editor-editor ql-editor"]').clear()
-                writer.writerow([path, level, score])
+                try:
+                    insert_text = driver.find_element_by_xpath("//div[@class='_9c5f1d66-denali-editor-editor ql-editor ql-blank']").send_keys(text)
+                    time.sleep(15)
+                    score = int(driver.find_element_by_xpath("//div[@class='fhsusol _bec19051-header-performanceScoreFadeIn _48adf116-header-performanceScore']").text)
+                    if score in range(0, 6):
+                        level = 'A1'
+                    elif score in range(6, 11):
+                        level = 'A2'
+                    elif score in range(11, 41):
+                        level = 'B1'
+                    elif score in range(41, 51):
+                        level = 'B2'
+                    elif score in range(51, 71):
+                        level = 'C1'
+                    elif score in range(71, 101):
+                        level = 'C2'
+                    start_again = driver.find_element_by_xpath('//div[@class="_9c5f1d66-denali-editor-editor ql-editor"]').clear()
+                    writer.writerow([path, level, score])
+                except Exception as e:
+                    print(e)
+                    continue
             csvf.close()
 
 
