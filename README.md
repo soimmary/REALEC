@@ -1,6 +1,6 @@
 # REALEC
 ## Инструкция
-Перед тем, как начать работу, вам необходимо установить браузеры Chrome и Mozilla и скачать, соответственно, [ChromeDriver] (https://chromedriver.chromium.org) и [FirefoxDriver] (https://github.com/mozilla/geckodriver/releases).
+Перед тем, как начать работу, вам необходимо установить браузеры Chrome и Mozilla и скачать, соответственно, [ChromeDriver](https://chromedriver.chromium.org) и [FirefoxDriver](https://github.com/mozilla/geckodriver/releases).
 
 **Автор:** Мария Бочарова
 
