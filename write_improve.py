@@ -13,9 +13,13 @@ import personal_info_wi
 LOGIN = personal_info.LOGIN_WI
 PASSWORD = personal_info.PASSWORD_WI
 
+my_wb_path = ''
+my_essay_path = ''
+
 
 def get_level(folder_path):
     global LOGIN, PASSWORD
+    global my_wb_path, my_essay_path
     options = Options()
     ua = UserAgent()
     userAgent = ua.random
@@ -31,7 +35,7 @@ def get_level(folder_path):
     insert_password = driver.find_element_by_id('password').send_keys(PASSWORD)
     continue_ = driver.find_element_by_id('btn-sign-in').click()
     time.sleep(5)
-    my_wb = driver.find_element_by_xpath('//*[@id="sidebar-workbook-60bca5b8-96f8-4cba-9b78-d12fb18a61c5"]/a').click()
+    my_wb = driver.find_element_by_xpath(my_wb_path).click()
     time.sleep(2)
     my_essay = driver.find_element_by_id('task-60bd05a9-212c-408b-a440-403df000a998').click()
     time.sleep(1)
