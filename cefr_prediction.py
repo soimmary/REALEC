@@ -6,12 +6,6 @@ from tqdm import tqdm
 from oauth2client.service_account import ServiceAccountCredentials
 
 
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-client = gspread.authorize(credentials)
-sheet = client.open('marks-vs-errors--DBsearch-results').sheet1
-
-
 def get_new_value(l1, l2, l3):
     l1 = re.findall(r'[abcABC][12]', l1, re.IGNORECASE)[0].lower()
     l2 = re.findall(r'[abcABC][12]', l2)[0].lower()
@@ -103,21 +97,6 @@ def get_new_value(l1, l2, l3):
 
     else:
         return '??'
-
-
-# Use this if you want to add the predicted level right into the google sheet.
-'''for i in tqdm(range(2, sheet.row_count + 1)):
-    if not sheet.cell(i, 5).value:
-        time.sleep(2)
-        if sheet.cell(i, 7).value and sheet.cell(i, 8).value and sheet.cell(i, 10).value:
-            new_value = get_new_value(sheet.cell(i, 7).value,
-                                      sheet.cell(i, 8).value,
-                                      sheet.cell(i, 10).value)
-            time.sleep(2)
-            sheet.update_cell(i, 5, new_value)
-
-    # since Google Sheets have quota limit:
-    time.sleep(3)'''
 
 
 # Use this if you want to update the csv file with the levels.
