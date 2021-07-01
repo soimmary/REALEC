@@ -16,6 +16,8 @@
 
 ![**my_essay_path:**](https://github.com/soimmary/REALEC/blob/main/my_essay_path.gif)
 
+5. В cefr_prediction.py на соснове полученных в duolingo.py, grammarly.py, write_improve.pyб данных об уровне делается общая таблица и предсказывается общий уровень английского. 
+
 ## Если возникают ошибки
 
 Варианты решения:
