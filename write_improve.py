@@ -7,19 +7,15 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
 
-import personal_info_wi
+import personal_info
 
 
-LOGIN = personal_info.LOGIN_WI
-PASSWORD = personal_info.PASSWORD_WI
-
-my_wb_path = ''
-my_essay_path = ''
+LOGIN = personal_info.LOGIN
+PASSWORD = personal_info.PASSWORD
 
 
 def get_level(folder_path):
     global LOGIN, PASSWORD
-    global my_wb_path, my_essay_path
     options = Options()
     ua = UserAgent()
     userAgent = ua.random
@@ -35,9 +31,9 @@ def get_level(folder_path):
     insert_password = driver.find_element_by_id('password').send_keys(PASSWORD)
     continue_ = driver.find_element_by_id('btn-sign-in').click()
     time.sleep(5)
-    my_wb = driver.find_element_by_xpath(my_wb_path).click()
+    my_wb = driver.find_element_by_xpath('//*[@id="sidebar-workbook-60bca5b8-96f8-4cba-9b78-d12fb18a61c5"]/a').click()
     time.sleep(2)
-    my_essay = driver.find_element_by_id(my_essay_path).click()
+    my_essay = driver.find_element_by_id('task-60bd05a9-212c-408b-a440-403df000a998').click()
     time.sleep(1)
 
     for path in tqdm(os.listdir(folder_path)):
@@ -52,14 +48,17 @@ def get_level(folder_path):
                     insert_text = driver.find_element_by_xpath('//textarea').send_keys(' ')
                     time.sleep(2)
                     check = driver.find_element_by_id('check').click()
-                    time.sleep(10)
+                    time.sleep(15)
                     level = driver.find_element_by_xpath('//*[@id="scroller"]/main/div/div/section[1]'
                                                          '/div/header/div[2]/div/div/p[2]').text
-                    writer.writerow([path, level])
+                    writer.writerow([folder_path.split('/')[-1] + '/' + path, level])
+                    # time.sleep(5)
                 except Exception as e:
                     print(e)
                     continue
             csvf.close()
 
 
-get_level('/PycharmProjects/REALEC/REALEC_texts')
+# the absolute path to the folder
+folder = '/Users/mariabocharova/PycharmProjects/REALEC/REALEC_texts'
+get_level(folder)
