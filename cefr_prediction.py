@@ -1,15 +1,9 @@
-import time
 import re
 import pandas as pd
-import gspread
-from tqdm import tqdm
-from oauth2client.service_account import ServiceAccountCredentials
 
 
 def get_new_value(l1, l2, l3):
-    l1 = re.findall(r'[abcABC][12]', l1, re.IGNORECASE)[0].lower()
-    l2 = re.findall(r'[abcABC][12]', l2)[0].lower()
-    l3 = re.findall(r'[abcABC][12]', l3)[0].lower()
+    l1, l2, l3 = l1.lower(), l2.lower(), l3.lower()
 
     l_list = [l1, l2, l3]
     l_letter_list = [l1[0], l2[0], l3[0]]
@@ -99,7 +93,11 @@ def get_new_value(l1, l2, l3):
         return '??'
 
 
-# Use this if you want to update the csv file with the levels.
-df = pd.read_csv('new_table.csv')
+df_duolingo = pd.read_csv('duolingo_results.csv')
+df_grammarly = pd.read_csv('grammarly_results.csv')
+df_write_improve = pd.read_csv('write_improve_results.csv')
+
+df = pd.merge(df_duolingo, df_grammarly,on='text').merge(df_write_improve, on='text')
+df.columns = ['text', 'Duolingo', 'Grammarly', 'Write_Improve']
 df['Prediction'] = df.apply(lambda row: get_new_value(row.Duolingo, row.Grammarly, row.Write_Improve), axis=1)
-df.to_csv('new_table.csv')
+df.to_csv('cefr_prediction_table.csv')
