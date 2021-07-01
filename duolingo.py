@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
 
 
-chromedriver_path = '/PycharmProjects/REALEC/chromedriver'
+chromedriver_path = '/Users/mariabocharova/PycharmProjects/REALEC/chromedriver'
 
 
 def get_level(folder_path):
@@ -30,7 +30,7 @@ def get_level(folder_path):
                     insert_text = driver.find_element_by_xpath("//textarea[@class='_1c55K']").send_keys(text)
                     time.sleep(5)
                     level = driver.find_element_by_xpath("//div[@class='RZxzk']").text
-                    writer.writerow([path, level])
+                    writer.writerow([folder_path.split('/')[-1] + '/' + path, level])
                     time.sleep(2)
                 except Exception as e:
                     print(e)
@@ -38,5 +38,6 @@ def get_level(folder_path):
             csvf.close()
     driver.close()
 
-
-get_level('/PycharmProjects/REALEC/REALEC_texts')
+# absolute path to the folder
+folder = '/Users/mariabocharova/PycharmProjects/REALEC/REALEC_texts'
+get_level(folder)
