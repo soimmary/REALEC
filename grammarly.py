@@ -1,17 +1,16 @@
-import os
-import time
-import csv
-from tqdm import tqdm
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
+from tqdm import tqdm
+import time
+import os
+import csv
 
-import personal_info_grml
+import personal_info
 
 
-LOGIN = personal_info.LOGIN_GRML
-PASSWORD = personal_info.PASSWORD_GRML
+LOGIN = personal_info.LOGIN
+PASSWORD = personal_info.PASSWORD
 
 
 def get_level(folder_path):
@@ -39,28 +38,26 @@ def get_level(folder_path):
             with open(folder_path + '/' + path, 'r') as f:
                 text = f.read()
                 time.sleep(3)
-                try:
-                    insert_text = driver.find_element_by_xpath("//div[@class='_9c5f1d66-denali-editor-editor ql-editor ql-blank']").send_keys(text)
-                    time.sleep(15)
-                    score = int(driver.find_element_by_xpath("//div[@class='fhsusol _bec19051-header-performanceScoreFadeIn _48adf116-header-performanceScore']").text)
-                    if score in range(0, 6):
-                        level = 'A1'
-                    elif score in range(6, 11):
-                        level = 'A2'
-                    elif score in range(11, 41):
-                        level = 'B1'
-                    elif score in range(41, 51):
-                        level = 'B2'
-                    elif score in range(51, 71):
-                        level = 'C1'
-                    elif score in range(71, 101):
-                        level = 'C2'
-                    start_again = driver.find_element_by_xpath('//div[@class="_9c5f1d66-denali-editor-editor ql-editor"]').clear()
-                    writer.writerow([path, level, score])
-                except Exception as e:
-                    print(e)
-                    continue
+                insert_text = driver.find_element_by_xpath("//div[@class='_9c5f1d66-denali-editor-editor ql-editor ql-blank']").send_keys(text)
+                time.sleep(10)
+                score = int(driver.find_element_by_xpath("//div[@class='fhsusol _bec19051-header-performanceScoreFadeIn _48adf116-header-performanceScore']").text)
+                if score in range(0, 6):
+                    level = 'A1'
+                elif score in range(6, 11):
+                    level = 'A2'
+                elif score in range(11, 41):
+                    level = 'B1'
+                elif score in range(41, 51):
+                    level = 'B2'
+                elif score in range(51, 71):
+                    level = 'C1'
+                elif score in range(71, 101):
+                    level = 'C2'
+                start_again = driver.find_element_by_xpath('//div[@class="_9c5f1d66-denali-editor-editor ql-editor"]').clear()
+                writer.writerow([folder_path.split('/')[-1] + '/' + path, level])
             csvf.close()
 
 
-get_level('/PycharmProjects/REALEC/REALEC_texts')
+# the absolute path to the folder
+folder = '/Users/mariabocharova/PycharmProjects/REALEC/REALEC_texts'
+get_level(folder)
