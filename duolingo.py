@@ -38,6 +38,6 @@ def get_level(folder_path):
             csvf.close()
     driver.close()
 
-# absolute path to the folder
+# the absolute path to the folder
 folder = '/Users/mariabocharova/PycharmProjects/REALEC/REALEC_texts'
 get_level(folder)
