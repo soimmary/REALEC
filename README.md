@@ -16,7 +16,7 @@
 
 ![**my_essay_path:**](https://github.com/soimmary/REALEC/blob/main/my_essay_path.gif)
 
-5. В [cefr_prediction.py](https://github.com/soimmary/REALEC/blob/main/cefr_prediction.py) на основе полученных в [duolingo.py](https://github.com/soimmary/REALEC/blob/main/duolingo.py), [grammarly.py](https://github.com/soimmary/REALEC/blob/main/grammarly.py), [write_improve.py](https://github.com/soimmary/REALEC/blob/main/write_improve.py) данных об уровне делается общая таблица и предсказывается уровень английского.
+5. В [cefr_prediction.py](https://github.com/soimmary/REALEC/blob/main/cefr_prediction.py) на основе полученных в [duolingo.py](https://github.com/soimmary/REALEC/blob/main/duolingo.py), [grammarly.py](https://github.com/soimmary/REALEC/blob/main/grammarly.py), [write_improve.py](https://github.com/soimmary/REALEC/blob/main/write_improve.py) данных делается общая таблица и предсказывается уровень английского.
 
 ## Если возникают ошибки
 
