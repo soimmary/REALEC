@@ -1,6 +1,6 @@
 # REALEC
 
-Эти программы помогут вам автоматизировать загрузку файлов на сайты [Grammarly](https://www.grammarly.com), [Write & Improve](https://writeandimprove.com) и [Duolingo](https://cefr.duolingo.com) и получить информацию об уровне английского языка. Результаты с названием файла и уровнем английского записываются в csv файлы.
+Эти программы помогут вам автоматизировать загрузку файлов на сайты [Grammarly](https://www.grammarly.com) и [Write & Improve](https://writeandimprove.com) и получить информацию об уровне английского языка. Результаты с названием файла и уровнем английского записываются в csv файлы.
 
 ## Инструкция
 1. Перед тем, как начать работу, вам необходимо установить браузеры Chrome и Mozilla и скачать, соответственно, [ChromeDriver](https://chromedriver.chromium.org) и [FirefoxDriver](https://github.com/mozilla/geckodriver/releases). По моим наблюдениям, Grammarly работает только в Firefox'e.
@@ -16,16 +16,16 @@
 
 ![**my_essay_path:**](https://github.com/soimmary/REALEC/blob/main/my_essay_path.gif)
 
-5. В [cefr_prediction.py](https://github.com/soimmary/REALEC/blob/main/cefr_prediction.py) на основе полученных в [duolingo.py](https://github.com/soimmary/REALEC/blob/main/duolingo.py), [grammarly.py](https://github.com/soimmary/REALEC/blob/main/grammarly.py), [write_improve.py](https://github.com/soimmary/REALEC/blob/main/write_improve.py) данных делается общая таблица и предсказывается уровень английского.
+5. В [cefr_prediction.py](https://github.com/soimmary/REALEC/blob/main/cefr_prediction.py) на основе полученных в [grammarly.py](https://github.com/soimmary/REALEC/blob/main/grammarly.py) и [write_improve.py](https://github.com/soimmary/REALEC/blob/main/write_improve.py) данных делается общая таблица и предсказывается уровень английского.
 
 ## Если возникают ошибки
 
-Варианты решения:
+В большинстве случаев достаточно:
 - перезагрузить программу
 - увеличить аргумент time.sleep()
 
 
-**Автор:** 💁🏼‍♀️ Мария Бочарова
+**Автор:** 💁🏼‍♀️ Маша Бочарова
 
 **Контакты:** 
 - 📨 rozovayatumbochka@gmail.com
