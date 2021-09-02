@@ -2,6 +2,8 @@
 
 Эти программы помогут вам автоматизировать загрузку файлов на сайты [Grammarly](https://www.grammarly.com) и [Write & Improve](https://writeandimprove.com) и получить информацию об уровне английского языка. Результаты с названием файла и уровнем английского записываются в csv файлы.
 
+В [conditions.pdf](https://github.com/soimmary/REALEC/blob/main/conditions.pdf) написаны условия и алгоритм для предсказаний уровня. 
+
 ## Инструкция
 1. Перед тем, как начать работу, вам необходимо установить браузеры Chrome и Mozilla и скачать, соответственно, [ChromeDriver](https://chromedriver.chromium.org) и [FirefoxDriver](https://github.com/mozilla/geckodriver/releases). По моим наблюдениям, Grammarly работает только в Firefox'e.
 2. В [personal_info_grml.py](https://github.com/soimmary/REALEC/blob/main/personal_info_grml.py) в переменные **LOGIN_GRML** и **PASSWORD_GRML** добавьте логин и пароль от вашего акаунта на [Grammarly](https://www.grammarly.com).
