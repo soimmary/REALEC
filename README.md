@@ -18,8 +18,8 @@
 
 ![**my_essay_path:**](https://github.com/soimmary/REALEC/blob/main/my_essay_path.gif)
 
-5. В [cefr_prediction.py](https://github.com/soimmary/REALEC/blob/main/cefr_prediction.py) на основе полученных в [grammarly.py](https://github.com/soimmary/REALEC/blob/main/grammarly.py) и [write_improve.py](https://github.com/soimmary/REALEC/blob/main/write_improve.py) данных делается общая таблица и предсказывается уровень английского.
-6. Если у вас уже есть данные с уровнями от Grammarly и Write & Improve, то [здесь](https://github.com/soimmary/REALEC/tree/main/table_examples) можно посмотреть, в каком формате должны быть таблицы с результатами, чтобы запустить [cefr_prediction.py](https://github.com/soimmary/REALEC/blob/main/cefr_prediction.py). 
+5. В [CEFR_prediction.py](https://github.com/soimmary/REALEC/blob/main/CEFR_prediction.py) на основе полученных в [grammarly.py](https://github.com/soimmary/REALEC/blob/main/grammarly.py) и [write_improve.py](https://github.com/soimmary/REALEC/blob/main/write_improve.py) данных делается общая таблица и предсказывается уровень английского.
+6. Если у вас уже есть данные с уровнями от Grammarly и Write & Improve, то [здесь](https://github.com/soimmary/REALEC/tree/main/table_examples) можно посмотреть, в каком формате должны быть таблицы с результатами, чтобы запустить [CEFR_prediction.py](https://github.com/soimmary/REALEC/blob/main/CEFR_prediction.py). 
 
 
 
