@@ -13,12 +13,12 @@ PASSWORD = personal_info.PASSWORD
 
 '''
 0-5   - A1
-6-10  - A2
-11-20 - В1-
-21-30 - В1
-31-40 - В1+
-41-50 - В2
-51-60 - В2+
+6-10  - A2_minus
+11-20 - A2_main
+21-30 - B1_minus
+31-40 - B1_main
+41-50 - В2_minus
+51-60 - В2_main
 61-70 - С1
 71+   - С2
 '''
@@ -43,17 +43,17 @@ def recalculate_level(x):
     if x in range(0, 6):
         return 'A1'
     elif x in range(6, 11):
-        return 'A2'
+        return 'A2_minus'
     elif x in range(11, 21):
-        return 'B1-'
+        return 'A2_main'
     elif x in range(21, 31):
-        return 'B1'
+        return 'B1_minus'
     elif x in range(31, 41):
-        return 'B1+'
+        return 'B1_main'
     elif x in range(41, 51):
-        return 'B2'
+        return 'B2_minus'
     elif x in range(51, 61):
-        return 'B2+'
+        return 'B2_main'
     elif x in range(61, 71):
         return 'C1'
     elif x in range(71, 101):
