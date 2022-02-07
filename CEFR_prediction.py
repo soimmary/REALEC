@@ -121,14 +121,14 @@ def make_prediction(l1, l2, l3):
     elif lvl[0] in ['b2.1', 'b2.2'] and lvl[1] in ['b2.2', 'c1'] and lvl[2] == 'c1':
         return 'B2_main'
 
-    # ✅ 25. Если один показатель B2_minus/B2_main, а остальные C (но не оба С1), или два показателя C1 и третий C, то C1;
+    # ✅ 25. Если один показатель B2_minus/B2_main, а остальные C (но не оба С1), или два показателя C1 и третий C, то C1_minus;
     elif (lvl[0] in ['b2.1', 'b2.2'] and lvl_letter[1] == 'c' and lvl[2] == 'c2') or \
             (lvl[0] == lvl[1] == 'c1' and lvl_letter[2] == 'c'):
-        return 'C1'
+        return 'C1_minus'
 
-    # ✅ 26. Если один показатель C, а остальные C2, то C1+.
+    # ✅ 26. Если один показатель C, а остальные C2, то C1_main.
     elif lvl_letter[0] == 'c' and lvl[1] == lvl[2] == 'c2':
-        return 'C1+'
+        return 'C1_main'
 
 
 df_grammarly = pd.read_csv('grammarly_results.csv')
